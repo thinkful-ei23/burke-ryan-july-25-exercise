@@ -23,11 +23,12 @@ const api = (function () {
   };
 
   const updateItem = function(id, updateData, callback){
-  	$.ajax({
+  	const updatedData = JSON.stringify(updateData);
+	$.ajax({
 		url: `${BASE_URL}/items/${id}`,
-		method: 'POST',
+		method: 'PATCH',
 		contentType: 'application/json',
-		data: updateData,
+		data: updatedData,
 		success: callback
   	}, callback);
   };
