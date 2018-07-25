@@ -22,8 +22,8 @@ const api = (function () {
     } , callback);
   };
 
-  const updateItem = function(id, updateData, callback){
-    const updatedData = JSON.stringify(updateData);
+  const updateItem = function(id, newName, callback){
+    const updatedData = JSON.stringify({name: newName});
     $.ajax( {
       url: `${BASE_URL}/items/${id}`,
       method: 'PATCH',
