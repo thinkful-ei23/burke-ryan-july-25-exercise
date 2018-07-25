@@ -30,7 +30,11 @@ const store = (function(){
   // };
 
   const findAndUpdate = function(id, newData) {
+    console.log(id, newData);
     const item = findById(id);
+    if (!item) {
+      throw new Error('item is not found');
+    }
     Object.assign(item, newData);
   };
 

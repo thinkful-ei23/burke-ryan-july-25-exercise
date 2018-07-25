@@ -23,7 +23,7 @@ const api = (function () {
   };
 
   const updateItem = function(id, updateData, callback){
-    const updatedData = JSON.stringify(udateData);
+    const updatedData = JSON.stringify(updateData);
     $.ajax( {
       url: `${BASE_URL}/items/${id}`,
       method: 'PATCH',
@@ -32,11 +32,20 @@ const api = (function () {
       success: callback
     } , callback);
   };
+
+  const deleteItem = function(id, callback) {
+    $.ajax( {
+      url: `${BASE_URL}/items/${id}`,
+      method: 'DELETE',
+      success: callback
+    } , callback);
+  };
   
   return {
     getItems,
     createItem,
-    updateItem
+    updateItem,
+    deleteItem
   };
 
 
