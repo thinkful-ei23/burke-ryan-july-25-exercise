@@ -25,7 +25,7 @@ $.getJSON('https://thinkful-list-api.herokuapp.com/ei-student/items', (response)
 api.getItems((items) => {
   const item = items[0];
 
-  api.updateItem(item.id, { name: 'foobar' }, () => {
+  api.updateItem(item.id, { name : 'foobar' }, () => {
     console.log('updated!');
   });
 });
