@@ -21,10 +21,21 @@ const api = (function () {
       success: callback
     } , callback);
   };
+
+  const updateItem = function(id, updateData, callback){
+  	$.ajax({
+		url: `${BASE_URL}/items/${id}`,
+		method: 'POST',
+		contentType: 'application/json',
+		data: updateData,
+		success: callback
+  	}, callback);
+  };
   
   return {
     getItems,
-    createItem
+    createItem,
+    updateItem
   };
 
 
